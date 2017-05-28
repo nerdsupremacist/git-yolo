@@ -13,6 +13,8 @@ Everything?
 That's right! Everything. If you press save it will be force pushed to origin.
 With a very nice commit message that includes a pretty emoji 😉. (Because it's 2017, it needs emojis)
 
+Git YOLO was even developed using itself!!!! Say wuuuuut?!?!?!
+
 ## Usage
 
 Easy!
@@ -34,7 +36,7 @@ git-yolo
 Well simple.
 Sometimes during hot patching you need to push everything very fast.
 You don't have time to save it, test it, run it, add it, commit it and push it.
-Just press Save! 
+Just press Save!
 
 ## Next?
 
