@@ -33,7 +33,8 @@ git-yolo
 
 Well simple.
 Sometimes during hot patching you need to push everything very fast.
-You don't have time to test it.
+You don't have time to save it, test it, run it, add it, commit it and push it.
+Just press Save! 
 
 ## Next?
 
