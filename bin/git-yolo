@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+var SimpleGit = require('simple-git');
+var path = process.cwd();
+var fs = require('fs');
+
+var repository = SimpleGit(path);
+
+function yolo(file, callback) {
+    if (file) {
+        console.log("Change in: " + file);
+    }
+    var message = file ? "YOLO!!! Changed: " + message : "YOLO!!!";
+    repository
+        .add('.')
+        .commit("YOLO!!!")
+        .push(['--force'], function() {
+            console.log("YOLO!");
+            if (callback) callback();
+        });
+}
+
+function listen() {
+    var options = {
+        persistent: true,
+        recursive: true
+    };
+    fs.watch(path, options, function(event, file) {
+        yolo(file);
+    });
+}
+
+console.log("Starting YOLO Mode");
+yolo(undefined, listen);

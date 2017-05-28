@@ -1,0 +1,22 @@
+{
+  "name": "git-yolo",
+  "version": "1.0.0",
+  "description": "YOLO Mode for GIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiasquintero/git-yolo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathiasquintero/git-yolo/issues"
+  },
+  "homepage": "https://github.com/mathiasquintero/git-yolo#readme",
+  "dependencies": {
+    "simple-git": "^1.73.0"
+  }
+}
