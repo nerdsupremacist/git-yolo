@@ -30,7 +30,7 @@ function yolo(file, callback) {
     if (file) {
         console.log("Change in: " + file);
     }
-    var message = "YOLO!!! " + emojis.random() + (file ?  "Changed: " + message : "");
+    var message = "YOLO!!! " + emojis.random() + (file ?  " Changed: " + file : "");
     repository
         .add('.')
         .commit(message)
