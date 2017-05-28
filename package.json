@@ -2,7 +2,6 @@
   "name": "git-yolo",
   "version": "1.0.0",
   "description": "YOLO Mode for GIT",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +9,16 @@
     "type": "git",
     "url": "git+https://github.com/mathiasquintero/git-yolo.git"
   },
+  "bin": {
+    "git-fuck": "./bin/git-fuck"
+  },
+  "keywords": [
+    "git",
+    "yolo",
+    "commit",
+    "force",
+    "push"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
