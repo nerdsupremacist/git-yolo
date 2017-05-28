@@ -19,5 +19,11 @@ Easy!
 Simply install it through npm:
 
 ```bash
-npm install git-yolo -g 
+npm install git-yolo -g
+```
+
+And start the mode with:
+
+```bash
+git-yolo
 ```
