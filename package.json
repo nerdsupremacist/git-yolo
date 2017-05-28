@@ -19,8 +19,8 @@
     "force",
     "push"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "mathiasquintero",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mathiasquintero/git-yolo/issues"
   },
