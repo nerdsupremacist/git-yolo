@@ -26,6 +26,7 @@ function listen() {
         recursive: true
     };
     fs.watch(path, options, function(event, file) {
+        // This works!!!
         if (file.indexOf('.git/') < 0) yolo(file);
     });
 }
