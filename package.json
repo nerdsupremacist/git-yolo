@@ -10,7 +10,7 @@
     "url": "git+https://github.com/mathiasquintero/git-yolo.git"
   },
   "bin": {
-    "git-fuck": "./bin/git-fuck"
+    "git-yolo": "./bin/git-yolo"
   },
   "keywords": [
     "git",
