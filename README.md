@@ -11,6 +11,7 @@ Everything?
 ```
 
 That's right! Everything. If you press save it will be force pushed to origin.
+With a very nice commit message that includes a pretty emoji 😉. (Because it's 2017, it needs emojis)
 
 ## Usage
 
