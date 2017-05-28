@@ -6,16 +6,36 @@ var fs = require('fs');
 
 var repository = SimpleGit(path);
 
+Array.prototype.random = function () {
+    var index = Math.floor(Math.random() * this.length);
+    return this[index];
+};
+
+var emojis = [
+    "😱",
+    "😅",
+    "🤓 ",
+    "😎",
+    "💩",
+    "🤞",
+    "👊",
+    "🖕",
+    "🙃",
+    "😉",
+    "☠️",
+    "😵"
+];
+
 function yolo(file, callback) {
     if (file) {
         console.log("Change in: " + file);
     }
-    var message = file ? "YOLO!!! Changed: " + message : "YOLO!!!";
+    var message = "YOLO!!! " + emojis.random() + (file ?  "Changed: " + message : "");
     repository
         .add('.')
-        .commit("YOLO!!!")
+        .commit(message)
         .push(['--force'], function() {
-            console.log("YOLO!");
+            console.log(message);
             if (callback) callback();
         });
 }
