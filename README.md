@@ -28,3 +28,14 @@ And start the mode with:
 ```bash
 git-yolo
 ```
+
+## But Y DOE?
+
+Well simple.
+Sometimes during hot patching you need to push everything very fast.
+You don't have time to test it.
+
+## Next?
+
+This should probably be slightly more customizable.
+For instance if you have a CI perhaps you should be able to include a `[ci-skip]` in the commit message.
