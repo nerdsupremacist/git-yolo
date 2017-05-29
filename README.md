@@ -38,7 +38,7 @@ Sometimes during hot patching you need to push everything very fast.
 You don't have time to save it, test it, run it, add it, commit it and push it.
 Just press Save!
 
-## Next?
+## What's Next?
 
 This should probably be slightly more customizable.
 - For instance if you have a CI perhaps you should be able to include a `[ci-skip]` in the commit message.
