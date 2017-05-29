@@ -3,7 +3,8 @@ YOLO Mode for GIT
 
 ## What is YOLO Mode?
 
-Well sometimes you can't even bother to keep writing convoluted commit messages.
+People always say that you should commit often.
+Well sometimes you can't even bother to decide what and when to add files and, even worse, keep writing convoluted commit messages.
 So with YOLO mode you will automatically force push every change. ¯\\\_(ツ)_/¯
 
 ```
