@@ -41,4 +41,5 @@ Just press Save!
 ## Next?
 
 This should probably be slightly more customizable.
-For instance if you have a CI perhaps you should be able to include a `[ci-skip]` in the commit message.
+- For instance if you have a CI perhaps you should be able to include a `[ci-skip]` in the commit message.
+- Extreme mode: The option to also bump the version at every new commit and tag it.  
