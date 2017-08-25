@@ -40,6 +40,12 @@ git config --global alias.yolo git-yolo
 git yolo
 ```
 
+Your changes might have introduced breaking changes, but you got more important things to worry about in your short time on Earth, so you can make sure to bump the major version on every save with the `--carpe-diem` flag:
+
+```bash
+git-yolo --carpe-diem
+```
+
 ## But Y DOE?
 
 Well simple.
@@ -51,5 +57,4 @@ Just press Save!
 
 This should probably be slightly more customizable.
 - For instance if you have a CI perhaps you should be able to include a `[ci-skip]` in the commit message.
-- Extreme mode: The option to also bump the version at every new commit and tag it.
-Perhaps `--carpe-diem`
+
