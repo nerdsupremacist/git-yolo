@@ -3,8 +3,10 @@
 var SimpleGit = require('simple-git');
 var path = process.cwd();
 var fs = require('fs');
+var spawn = require('cross-spawn');
 
 var repository = SimpleGit(path);
+var flags = process.argv.slice(2);
 
 Array.prototype.random = function () {
     var index = Math.floor(Math.random() * this.length);
@@ -31,10 +33,19 @@ var emojis = [
     "¯\\_(ツ)_/¯"
 ];
 
+function hasFlag(flag) {
+    return flags.indexOf(flag) >= 0;
+}
+
 function yolo(file, callback) {
     if (file) {
         console.log("Change in: " + file);
     }
+
+    if (hasFlag('--carpe-diem')) {
+        spawn.sync('npm', ['version', 'major']);
+    }
+
     var message = "YOLO!!! " + emojis.random() + (file ?  " Changed: " + file : "");
     repository
         .add('.')
@@ -56,5 +67,5 @@ function listen() {
 }
 
 // This really works
-console.log("Starting YOLO Mode");
+console.log("Starting YOLO Mode" + (hasFlag('--carpe-diem') ? " with extra Carpe Diem™" : ""));
 yolo(undefined, listen);
