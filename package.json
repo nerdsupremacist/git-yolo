@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/mathiasquintero/git-yolo#readme",
   "dependencies": {
+    "cross-spawn": "^5.1.0",
     "simple-git": "^1.73.0"
   }
 }
