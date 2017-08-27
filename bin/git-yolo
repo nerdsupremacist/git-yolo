@@ -37,15 +37,35 @@ function hasFlag(flag) {
     return flags.indexOf(flag) >= 0;
 }
 
+function isNPMProject() {
+    return fs.existsSync(path + '/package.json');
+}
+
+function bumpVersion(version) {
+    if (version) {
+        repository.addTag(version, function(event) {
+            console.log(event);
+        });
+    } else {
+        repository.tags(function(tags) {
+            var tag = tags[0];
+            console.log(tag);
+        });
+    }
+}
+
+function handleChangelogChange(event) {
+    console.log(event);
+}
+
 function yolo(file, callback) {
     if (file) {
         console.log("Change in: " + file);
     }
 
-    if (hasFlag('--carpe-diem')) {
+    if (hasFlag('--carpe-diem') && isNPMProject()) {
         console.log('carpe-diem on');
-        var result = spawn.sync('npm', ['version', 'major']).output;
-        console.log(result);
+        spawn.sync('npm', ['version', 'major']); // TODO: fix real path
     }
 
     var message = "YOLO!!! " + emojis.random() + (file ?  " Changed: " + file : "");
@@ -55,9 +75,9 @@ function yolo(file, callback) {
         .push(['--force'], function() {
             console.log(message);
             if (callback) callback();
-            // if (hasFlag('--carpe-diem')) {
-            //     // tag it
-            // }
+            if (hasFlag('--carpe-diem') && !isNPMProject()) {
+                bumpVersion()
+            }
         });
 }
 
@@ -68,6 +88,7 @@ function listen() {
     };
     fs.watch(path, options, function(event, file) {
         if (file.indexOf('.git/') < 0) yolo(file);
+        if (file == 'CHANGELOG.md') handleChangelogChange(event);
     });
 }
 
