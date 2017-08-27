@@ -43,6 +43,7 @@ function yolo(file, callback) {
     }
 
     if (hasFlag('--carpe-diem')) {
+        console.log('carpe-diem on');
         var result = spawn.sync('npm', ['version', 'major']);
         console.log(result);
     }
