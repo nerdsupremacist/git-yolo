@@ -44,7 +44,7 @@ function yolo(file, callback) {
 
     if (hasFlag('--carpe-diem')) {
         console.log('carpe-diem on');
-        var result = spawn.sync('npm', ['version', 'major']);
+        var result = spawn.sync('npm', ['version', 'major']).output;
         console.log(result);
     }
 
