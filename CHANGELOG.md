@@ -5,7 +5,7 @@
 ### Changed
 - Yoloed around
 
-## [4.0.4] - 2017-08-27
+## [4.0.4] - 2017-08-26
 ### Added
 - Changelog listening
 
