@@ -44,20 +44,31 @@ function isNPMProject() {
 
 function bumpVersion(version) {
     if (version) {
-        repository.addTag(version, function(event) {
-            console.log(event);
-        });
+        if (isNPMProject()) {
+            spawn.sync('npm', ['version', version]);
+        } else {
+            repository.addTag(version, function(event) {
+                console.log(event);
+            });
+        }
     } else {
-        repository.tags(function(tags) {
-            var tag = tags[0];
-            console.log(tag);
-        });
+        if (isNPMProject()) {
+            spawn.sync('npm', ['version', 'major']);
+        } else {
+            repository.tags(function(tags) {
+                var tag = tags[0];
+                console.log(tag);
+            });
+        }
     }
 }
 
 function handleChangelogChange() {
     parseChangelog(path + '/CHANGELOG.md', function(err, changelog) {
-        console.log(changelog);
+        var latest = changelog.versions[0]
+        if (!latest) return;
+        var date = new Date(latest.title.replace('[' + latest.version + '] - ', ''));
+        console.log(date);
     });
 }
 
@@ -68,7 +79,7 @@ function yolo(file, callback) {
 
     if (hasFlag('--carpe-diem') && isNPMProject()) {
         console.log('carpe-diem on');
-        spawn.sync('npm', ['version', 'major']); // TODO: fix real path
+        spawn.sync('npm', ['version', 'major']);
     }
 
     var message = "YOLO!!! " + emojis.random() + (file ?  " Changed: " + file : "");
