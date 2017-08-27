@@ -52,7 +52,6 @@ function addTag(version) {
         // repository.addTag(version, function(event) {
         //     console.log(event);
         // });
-
     });
 }
 
@@ -82,7 +81,7 @@ function yolo(file, callback) {
 
     if (hasFlag('--carpe-diem') && isNPMProject()) {
         console.log('carpe-diem on');
-        spawn.sync('npm', ['version', 'major']);
+        bumpVersion();
     }
 
     var message = "YOLO!!! " + emojis.random() + (file ?  " Changed: " + file : "");
