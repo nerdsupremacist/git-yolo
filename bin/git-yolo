@@ -55,7 +55,9 @@ function bumpVersion(version) {
 }
 
 function handleChangelogChange(event) {
-    console.log(event);
+    repository.log(function(log) {
+        console.log(log);
+    });
 }
 
 function yolo(file, callback) {
