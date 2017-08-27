@@ -56,7 +56,7 @@ function bumpVersion(version) {
 }
 
 function handleChangelogChange() {
-    parseChangelog(path + 'CHANGELOG.md', function(changelog) {
+    parseChangelog(path + '/CHANGELOG.md', function(changelog) {
         console.log(changelog);
     });
 }
