@@ -55,7 +55,7 @@ function bumpVersion(version) {
 }
 
 function handleChangelogChange(event) {
-    repository.log(function(log) {
+    repository.log(function(err, log) {
         console.log(log);
     });
 }
