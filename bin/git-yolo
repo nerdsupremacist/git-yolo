@@ -54,10 +54,10 @@ function bumpVersion(version) {
     }
 }
 
-function handleChangelogChange(event) {
-    repository.log(function(err, log) {
-        console.log(log);
-    });
+function handleChangelogChange() {
+    var raw = fs.readFileSync('CHANGELOG.md', { encoding: 'utf-8' });
+    var changelog = parseChangelog(raw);
+    console.log(changelog);
 }
 
 function yolo(file, callback) {
@@ -90,7 +90,7 @@ function listen() {
     };
     fs.watch(path, options, function(event, file) {
         if (file.indexOf('.git/') < 0) yolo(file);
-        if (file == 'CHANGELOG.md') handleChangelogChange(event);
+        if (file == 'CHANGELOG.md') handleChangelogChange();
     });
 }
 
