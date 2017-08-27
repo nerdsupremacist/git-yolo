@@ -4,7 +4,7 @@ var SimpleGit = require('simple-git');
 var path = process.cwd();
 var fs = require('fs');
 var spawn = require('cross-spawn');
-var parseChangelog = require('parse-changelog');
+var parseChangelog = require('changelog-parser');
 
 var repository = SimpleGit(path);
 var flags = process.argv.slice(2);
@@ -56,8 +56,7 @@ function bumpVersion(version) {
 }
 
 function handleChangelogChange() {
-    var raw = fs.readFileSync('CHANGELOG.md', { encoding: 'utf-8' });
-    var changelog = parseChangelog(raw);
+    var changelog = parseChangelog(path + 'CHANGELOG.md');
     console.log(changelog);
 }
 
