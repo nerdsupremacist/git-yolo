@@ -105,7 +105,7 @@ function listen() {
     };
     fs.watch(path, options, function(event, file) {
         if (file.indexOf('.git/') < 0) yolo(file);
-        if (file == 'CHANGELOG.md') handleChangelogChange();
+        if (file == 'CHANGELOG.md' && !hasFlag('--carpe-diem')) handleChangelogChange();
     });
 }
 
