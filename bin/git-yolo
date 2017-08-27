@@ -56,8 +56,9 @@ function bumpVersion(version) {
 }
 
 function handleChangelogChange() {
-    var changelog = parseChangelog(path + 'CHANGELOG.md');
-    console.log(changelog);
+    parseChangelog(path + 'CHANGELOG.md', function(changelog) {
+        console.log(changelog);
+    });
 }
 
 function yolo(file, callback) {
