@@ -4,6 +4,7 @@ var SimpleGit = require('simple-git');
 var path = process.cwd();
 var fs = require('fs');
 var spawn = require('cross-spawn');
+var parseChangelog = require('parse-changelog');
 
 var repository = SimpleGit(path);
 var flags = process.argv.slice(2);
